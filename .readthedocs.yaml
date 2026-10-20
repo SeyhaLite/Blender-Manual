@@ -1,0 +1,40 @@
+# Read the Docs configuration.
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html
+
+version: 2
+
+build:
+  os: ubuntu-24.04
+  tools:
+    # sphinx 9.x requires Python >= 3.12 once we move to upstream's pin.
+    python: "3.12"
+  jobs:
+    # The repo is a shallow clone on RTD; nothing here needs history, but
+    # `html_last_updated_fmt` reads nicer with a real checkout.
+    post_checkout:
+      - git fetch --unshallow --tags || true
+
+sphinx:
+  configuration: manual/conf.py
+  builder: html
+  # Any Sphinx warning fails the build. Keep this ON: it is the quality gate
+  # that catches broken :doc:/:ref: cross-references and missing images.
+  fail_on_warning: true
+
+# We only publish HTML for now (no PDF/EPUB until the translation is complete).
+formats: []
+
+python:
+  install:
+    - requirements: requirements.txt
+
+search:
+  ranking:
+    # Promote the translated sections above generated pages.
+    getting_started/*: 4
+    interface/*: 4
+    glossary/*: 3
+    appendix/*: 2
+  ignore:
+    - search.html
+    - genindex.html

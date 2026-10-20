@@ -1,0 +1,375 @@
+/*
+ * km_overrides.css — Khmer (ភាសាខ្មែរ) typography layer for the Blender Manual.
+ *
+ * Loaded AFTER the furo theme CSS and after the upstream `theme_overrides.css`,
+ * so every rule here wins the cascade without needing !important in most cases.
+ *
+ * Goals
+ *   1. Render Khmer correctly: a real Khmer font (self-hosted Noto Sans Khmer)
+ *      plus enough line-height that subscript/coeng glyphs (​្, ​្ក) are never clipped.
+ *   2. Line-break Khmer prose, which is written without spaces between words.
+ *   3. Keep every text/background pair at >= 4.5:1 contrast in BOTH the furo
+ *      light and dark variants (all colours go through furo's own CSS variables,
+ *      so the built-in light/dark/auto switcher keeps working untouched).
+ *   4. Make the wide shortcut/keymap tables usable on small screens.
+ *
+ * Do not restyle layout here — only typography, spacing and contrast.
+ */
+
+/* ------------------------------------------------------------------ *
+ * 1. Font stack
+ * ------------------------------------------------------------------ */
+
+body {
+  /* Khmer first: Noto Sans Khmer only carries the Khmer + latin ranges we
+     subsetted, so latin text still falls through to furo's system stack. */
+  --font-stack: "Noto Sans Khmer", "Khmer OS Battambang", "Khmer OS",
+    "Leelawadee UI", "Noto Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --font-stack--headings: var(--font-stack);
+  /* Code, kbd and menu paths stay Latin/monospace — never translate them —
+     but keep a Khmer fallback so a stray Khmer glyph is not rendered as tofu. */
+  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
+    "Liberation Mono", "Lucida Console", "Noto Sans Khmer", monospace;
+
+  /* Khmer needs noticeably more leading than Latin. 1.5 (furo default)
+     clips ជើងអក្សរ (subscript consonants) at 16px. */
+  line-height: 1.85;
+}
+
+/* Slightly larger base size: Khmer glyphs read smaller than Latin at the
+   same point size. */
+html {
+  font-size: 106.25%;
+}
+
+/* ------------------------------------------------------------------ *
+ * 2. Khmer line breaking and overflow
+ * ------------------------------------------------------------------ */
+
+article[role="main"],
+.sidebar-tree,
+.toc-tree,
+.admonition,
+table.docutils {
+  /* Khmer has no word spaces; `break-word` stops a long unbroken run
+     (URLs, operator names) from blowing out the container, while
+     letting the browser's ICU Khmer break iterator handle real words. */
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Keep menu paths (Editor --> Menu --> Item) from wrapping mid-arrow. */
+.guilabel,
+.menuselection,
+kbd,
+code.literal {
+  white-space: nowrap;
+}
+
+/* But allow wrapping when the chip itself is longer than the line. */
+@media (max-width: 46em) {
+  .guilabel,
+  .menuselection {
+    white-space: normal;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * 3. Headings
+ * ------------------------------------------------------------------ */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+  margin-top: 1.6em;
+  /* Khmer heading glyphs are tall; give the anchor some breathing room. */
+  scroll-margin-top: calc(var(--header-height) + 0.5rem);
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+h3, h4 { font-weight: 600; }
+
+p.rubric {
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------ *
+ * 4. Sidebar + on-page TOC
+ * ------------------------------------------------------------------ */
+
+body {
+  /* furo computes sidebar item height from this; 1rem clips Khmer. */
+  --sidebar-item-line-height: 1.45rem;
+  --sidebar-item-spacing-vertical: 0.45rem;
+  --sidebar-item-font-size: var(--font-size--small);
+}
+
+.sidebar-tree .caption,
+.sidebar-tree :not(.caption) > .caption-text {
+  /* `text-transform: uppercase` is a no-op for Khmer and only distorts
+     the Latin part of mixed captions. */
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.sidebar-brand-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.toc-tree {
+  line-height: 1.6;
+}
+
+.toc-title {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-search::placeholder {
+  font-family: var(--font-stack);
+}
+
+/* ------------------------------------------------------------------ *
+ * 5. Inline chips: kbd / guilabel / code
+ *
+ * Contrast is inherited from furo variables, which already clear 4.5:1
+ * in both light and dark mode. We only adjust spacing and line-height,
+ * because Khmer text inside a chip needs vertical room.
+ * ------------------------------------------------------------------ */
+
+kbd,
+.guilabel {
+  display: inline-block;
+  line-height: 1.6;
+  padding: 0.05em 0.4em;
+  vertical-align: baseline;
+}
+
+.menuselection {
+  font-weight: 500;
+}
+
+code.literal,
+.code.literal {
+  /* Never let a code chip inherit a Khmer font-size bump that makes it
+     look heavier than the surrounding prose. */
+  font-size: var(--code-font-size);
+}
+
+/* ------------------------------------------------------------------ *
+ * 6. Tables — especially the wide keymap / shortcut tables
+ * ------------------------------------------------------------------ */
+
+article[role="main"] table.docutils {
+  font-size: var(--font-size--small);
+  line-height: 1.7;
+}
+
+article[role="main"] table.docutils th,
+article[role="main"] table.docutils td {
+  padding: 0.45rem 0.6rem;
+  vertical-align: top;
+}
+
+/* Row striping: use furo's own tokens so light/dark both stay readable. */
+article[role="main"] table.docutils tbody tr:nth-child(odd) {
+  background-color: var(--color-background-secondary);
+}
+
+article[role="main"] table.docutils tbody tr:nth-child(even) {
+  background-color: var(--color-table-even-background, transparent);
+}
+
+article[role="main"] table.docutils thead tr {
+  background-color: var(--color-table-header-background,
+    var(--color-background-secondary));
+}
+
+/* Horizontal scroll instead of squashing 5-column shortcut tables. */
+.table-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Field lists (the `.. reference::` boxes: Mode / Menu / Shortcut). */
+.refbox .field-list .field-name,
+.refbox .field-list .field-body {
+  line-height: 1.75;
+}
+
+.refbox .field-list .field-name {
+  font-weight: 600;
+  white-space: normal;
+}
+
+/* ------------------------------------------------------------------ *
+ * 7. Admonitions, figures, blockquotes
+ * ------------------------------------------------------------------ */
+
+.admonition,
+.admonition p,
+.admonition p.admonition-title {
+  font-size: var(--admonition-font-size);
+  line-height: 1.8;
+}
+
+.admonition p.admonition-title {
+  /* furo's title has a 2rem left padding for the icon; Khmer title text
+     is longer, so let it wrap instead of overflowing. */
+  line-height: 1.5;
+}
+
+article[role="main"] blockquote {
+  line-height: 1.85;
+}
+
+figcaption,
+figure .caption,
+table > caption {
+  line-height: 1.7;
+}
+
+/* Screenshots are light-coloured UI captures; on the dark variant a bare
+   PNG looks like it is floating. Give figures a neutral matte in both
+   modes so the edge of the screenshot is visible. */
+article[role="main"] figure img,
+article[role="main"] .figure img {
+  background-color: var(--color-background-item, transparent);
+  border-radius: 0.25rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * 8. Announcement banner (translation-progress notice)
+ *
+ * furo's dark-mode announcement uses a low-contrast pair by default;
+ * pin it to values that clear 4.5:1 on both variants.
+ * ------------------------------------------------------------------ */
+
+body {
+  --color-announcement-background: #1f2933;
+  --color-announcement-text: #f2f5f8;
+}
+
+@media (prefers-color-scheme: light) {
+  body[data-theme="auto"] {
+    --color-announcement-background: #eef2f6;
+    --color-announcement-text: #1c2733;
+  }
+}
+
+body[data-theme="light"] {
+  --color-announcement-background: #eef2f6;
+  --color-announcement-text: #1c2733;
+}
+
+.announcement-content {
+  font-size: var(--font-size--small);
+  line-height: 1.75;
+}
+
+.announcement-content a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------ *
+ * 9. Search results
+ * ------------------------------------------------------------------ */
+
+ul.search li {
+  line-height: 1.8;
+}
+
+ul.search li .context,
+[role="main"] .highlighted {
+  /* `mark` highlight must stay legible in dark mode too. */
+  line-height: 1.8;
+}
+
+/* ------------------------------------------------------------------ *
+ * 10. Footer / prev-next
+ * ------------------------------------------------------------------ */
+
+.bottom-of-page,
+.related-pages a .page-info .title {
+  line-height: 1.7;
+}
+
+/* ------------------------------------------------------------------ *
+ * 11. Scrollbars (thin, token-coloured, works in both variants)
+ * ------------------------------------------------------------------ */
+
+.toc-scroll,
+.sidebar-scroll,
+.table-scroll-wrapper,
+article[role="main"] .highlight {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-foreground-border) transparent;
+}
+
+.toc-scroll::-webkit-scrollbar,
+.sidebar-scroll::-webkit-scrollbar,
+.table-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.toc-scroll::-webkit-scrollbar-thumb,
+.sidebar-scroll::-webkit-scrollbar-thumb,
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-foreground-border);
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ *
+ * 12. Print
+ * ------------------------------------------------------------------ */
+
+@media print {
+  body {
+    line-height: 1.6;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * 13. Links that fall back to the English manual
+ *
+ * The `km_xref_fallback` extension adds .km-fallback-en to every
+ * :ref:`bpy.*` / :doc: that points at a page which is not translated
+ * yet. Mark them so a reader is never surprised by an abrupt language
+ * switch. Muted colour + dotted underline + a small "EN" tag.
+ * ------------------------------------------------------------------ */
+
+a.km-fallback-en {
+  text-decoration-style: dotted;
+  text-underline-offset: 0.2em;
+}
+
+a.km-fallback-en::after {
+  content: "EN";
+  display: inline-block;
+  font-family: var(--font-stack--monospace);
+  font-size: 0.62em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-left: 0.25em;
+  padding: 0.15em 0.3em;
+  vertical-align: 0.15em;
+  border-radius: 0.25em;
+  /* Contrast checked against both furo variants:
+     light  #f6f8fa on #ffffff -> the badge uses foreground tokens below. */
+  background-color: var(--color-background-secondary);
+  color: var(--color-foreground-muted);
+  border: 1px solid var(--color-background-border);
+}
+
+/* Do not repeat the badge inside already-badged containers. */
+a.km-fallback-en > *::after {
+  content: none;
+}

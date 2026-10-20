@@ -1,0 +1,15 @@
+:orphan:
+
+#######################################
+  ចាប់ផ្ដើមប្រើប្រាស់ (Getting Started)
+#######################################
+
+.. keep up to date with :doc:`</index>`
+
+.. toctree::
+   :maxdepth: 2
+
+   about/index.rst
+   installing/index.rst
+   configuration/index.rst
+   help.rst

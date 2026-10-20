@@ -1,0 +1,38 @@
+# --- Build output -----------------------------------------------------------
+build/
+site/
+manual/_build/
+
+# --- Compiled translation catalogs -----------------------------------------
+# .po sources ARE tracked; only the compiled binaries are generated.
+locale/**/*.mo
+*.mo
+
+# --- Python -----------------------------------------------------------------
+.venv/
+venv/
+.python-version
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# --- Editors / OS -----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Misc -------------------------------------------------------------------
+*.log
+*.tmp
+*.orig
+*.rej
+*.diff
+*.bak
+node_modules/

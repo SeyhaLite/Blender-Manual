@@ -1,0 +1,262 @@
+# Khmer (ខ្មែរ) translations for Sphinx's own UI messages and the furo theme
+# templates used by the Khmer Blender Manual.
+#
+# Sphinx has no built-in `km` catalog, so without this file every piece of
+# chrome around the translated content — admonition titles ("Note", "Warning"),
+# the vendored `.. reference::` box title, prev/next labels, the search box,
+# the theme toggle, permalinks — stays in English even though the pages are
+# Khmer.
+#
+# Sphinx compiles this .po into locale/km/LC_MESSAGES/sphinx.mo automatically
+# at build time (babel is a hard dependency, see requirements.txt).
+#
+# Only msgids that actually exist in Sphinx 9 / furo are listed here; an entry
+# that no longer matches simply stays unused.
+#
+# Copyright: this catalog is a translation work, licensed CC-BY-SA 4.0
+# International, same as the manual content it serves.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blender Manual (Khmer) 5.2\n"
+"Report-Msgid-Bugs-To: https://github.com/SeyhaLite/Blender-Manual/issues\n"
+"POT-Creation-Date: 2026-10-20 00:00+0000\n"
+"PO-Revision-Date: 2026-10-20 00:00+0000\n"
+"Last-Translator: Khmer Translation Contributors\n"
+"Language: km\n"
+"Language-Team: Khmer\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: manual\n"
+
+# ---------------------------------------------------------------------------
+# Admonition titles (sphinx.locale.admonitionlabels). These are the coloured
+# boxes used throughout the manual; keeping them Khmer matters most.
+# ---------------------------------------------------------------------------
+
+msgid "Attention"
+msgstr "ការយកចិត្តទុកដាក់"
+
+msgid "Caution"
+msgstr "ប្រុងប្រយ័ត្ន"
+
+msgid "Danger"
+msgstr "គ្រោះថ្នាក់"
+
+msgid "Error"
+msgstr "កំហុស"
+
+msgid "Hint"
+msgstr "ការណែនាំ"
+
+msgid "Important"
+msgstr "សំខាន់"
+
+msgid "Note"
+msgstr "ចំណាំ"
+
+msgid "See also"
+msgstr "សូមមើលផងដែរ"
+
+msgid "Tip"
+msgstr "គន្លឹះ"
+
+msgid "Warning"
+msgstr "ការព្រមាន"
+
+msgid "Admonition"
+msgstr "សេចក្ដីព្រមាន"
+
+# Title injected by the vendored `reference` extension (build_files/extensions/
+# reference.py calls _('Reference')).
+msgid "Reference"
+msgstr "ឯកសារយោង"
+
+# ---------------------------------------------------------------------------
+# Permalink tooltips (sphinx/writers/html5.py)
+# ---------------------------------------------------------------------------
+
+msgid "Link to this heading"
+msgstr "តំណទៅចំណងជើងនេះ"
+
+msgid "Link to this image"
+msgstr "តំណទៅរូបភាពនេះ"
+
+msgid "Link to this definition"
+msgstr "តំណទៅនិយមន័យនេះ"
+
+msgid "Link to this table"
+msgstr "តំណទៅតារាងនេះ"
+
+msgid "Link to this term"
+msgstr "តំណទៅពាក្យនេះ"
+
+msgid "Link to this code"
+msgstr "តំណទៅកូដនេះ"
+
+msgid "Link to this toctree"
+msgstr "តំណទៅតារាងមាតិកានេះ"
+
+msgid "Permalink to this definition"
+msgstr "តំណអចិន្ត្រៃយ៍ទៅនិយមន័យនេះ"
+
+msgid "Permalink to this headline"
+msgstr "តំណអចិន្ត្រៃយ៍ទៅចំណងជើងនេះ"
+
+# ---------------------------------------------------------------------------
+# furo theme templates (sidebar, page chrome, prev/next, theme toggle labels)
+# ---------------------------------------------------------------------------
+
+msgid "Next"
+msgstr "បន្ទាប់"
+
+msgid "Previous"
+msgstr "មុន"
+
+msgid "next"
+msgstr "បន្ទាប់"
+
+msgid "previous"
+msgstr "មុន"
+
+msgid "On this page"
+msgstr "នៅលើទំព័រនេះ"
+
+msgid "Contents"
+msgstr "មាតិកា"
+
+msgid "Table of Contents"
+msgstr "តារាងមាតិកា"
+
+msgid "Back to top"
+msgstr "ត្រឡប់ទៅខាងលើ"
+
+msgid "Scroll to top"
+msgstr "រំកិលទៅខាងលើ"
+
+msgid "Skip to content"
+msgstr "រំលងទៅមាតិកា"
+
+msgid "Edit this page"
+msgstr "កែសម្រួលទំព័រនេះ"
+
+msgid "View this page"
+msgstr "មើលទំព័រនេះ"
+
+msgid "Search"
+msgstr "ស្វែងរក"
+
+msgid "Search Page"
+msgstr "ទំព័រស្វែងរក"
+
+msgid "Index"
+msgstr "លិបិក្រម"
+
+msgid "index"
+msgstr "លិបិក្រម"
+
+msgid "Copyright"
+msgstr "រក្សាសិទ្ធិ"
+
+msgid "Navigation"
+msgstr "ការរុករក"
+
+msgid "Home"
+msgstr "ទំព័រដើម"
+
+msgid "Project Home"
+msgstr "ទំព័រដើមគម្រោង"
+
+msgid "Builds"
+msgstr "ការ build"
+
+msgid "Downloads"
+msgstr "ការទាញយក"
+
+msgid "Versions"
+msgstr "កំណែ"
+
+msgid "On Read the Docs"
+msgstr "នៅលើ Read the Docs"
+
+msgid "Made with"
+msgstr "បង្កើតដោយ"
+
+msgid "About these documents"
+msgstr "អំពីឯកសារទាំងនេះ"
+
+msgid "Footnotes"
+msgstr "អត្ថបទយោង"
+
+msgid "Please activate JavaScript to enable the search functionality."
+msgstr "សូមបើក JavaScript ដើម្បីអាចប្រើមុខងារស្វែងរក។"
+
+msgid ""
+"Your search did not match any documents. Please make sure that all words are "
+"spelled correctly and that you've selected enough categories."
+msgstr ""
+"ការស្វែងរករបស់អ្នកមិនត្រូវនឹងឯកសារណាមួយទេ។ សូមប្រាកដថាពាក្យទាំងអស់បានសរសេរត្រឹមត្រូវ "
+"ហើយអ្នកបានជ្រើសរើសប្រភេទគ្រប់គ្រាន់។"
+
+# ---------------------------------------------------------------------------
+# Sphinx core / index / search / version metadata
+# ---------------------------------------------------------------------------
+
+msgid "%s documentation"
+msgstr "ឯកសារណែនាំ %s"
+
+msgid "Search within %(docstitle)s"
+msgstr "ស្វែងរកក្នុង %(docstitle)s"
+
+msgid "search this documentation"
+msgstr "ស្វែងរកក្នុងឯកសារណែនាំនេះ"
+
+msgid "Search Results"
+msgstr "លទ្ធផលស្វែងរក"
+
+msgid "Last updated on %(last_updated)s."
+msgstr "ធ្វើបច្ចុប្បន្នភាពចុងក្រោយនៅ %(last_updated)s។"
+
+msgid "last updated"
+msgstr "ធ្វើបច្ចុប្បន្នភាពចុងក្រោយ"
+
+msgid "By %s"
+msgstr "ដោយ %s"
+
+msgid "Version"
+msgstr "កំណែ"
+
+msgid "Release"
+msgstr "ការចេញផ្សាយ"
+
+msgid "Deprecated"
+msgstr "មិនណែនាំឱ្យប្រើទៀត"
+
+msgid "Expand sidebar"
+msgstr "ពង្រីករបារចំហៀង"
+
+msgid "Collapse sidebar"
+msgstr "បង្រួមរបារចំហៀង"
+
+msgid "modules"
+msgstr "ម៉ូឌុល"
+
+msgid "Full index on this page"
+msgstr "លិបិក្រមពេញលេញនៅលើទំព័រនេះ"
+
+msgid "Glossary"
+msgstr "វចនានុក្រម"
+
+msgid "page"
+msgstr "ទំព័រ"
+
+msgid "Page"
+msgstr "ទំព័រ"
+
+# sphinx.ext.todo
+msgid "Todo"
+msgstr "ត្រូវធ្វើ"
+
+msgid "Todo List"
+msgstr "បញ្ជីការងារត្រូវធ្វើ"

@@ -1,0 +1,31 @@
+# Python dependencies for building the Khmer Blender Manual.
+#
+# NOTE ON PINNING
+# Upstream (https://projects.blender.org/blender/blender-manual) pins
+# sphinx==9.1.0, which requires Python >= 3.12. The pins below are the newest
+# versions that also build on Python 3.11, so that local development machines
+# and the Read the Docs build (Python 3.12, see .readthedocs.yaml) produce the
+# same output. When moving to sphinx 9.1.0+, keep Python >= 3.12 on RTD.
+
+sphinx==9.0.4
+
+# Sphinx dependencies that matter for reproducible output.
+Jinja2==3.1.6
+Pygments==2.21.0
+docutils==0.22.4
+snowballstemmer==3.1.1
+babel==2.18.0
+requests==2.34.2
+
+# Theme. Must match upstream so that `theme_overrides.css` keeps applying.
+furo==2025.12.19
+sphinx-basic-ng==1.0.0b2
+
+# Copy button next to code blocks (conf.py enables it only if importable).
+sphinx-copybutton==0.5.2
+
+# Only needed for the gettext/.po translation workflow (`make update_po`).
+sphinx-intl==2.3.2
+
+# Only needed for `make livehtml`.
+sphinx-autobuild==2025.8.25
