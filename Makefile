@@ -25,6 +25,8 @@ Translation workflow
 - check             run tools/check_translation.py (Khmer coverage + hygiene).
 - labels            regenerate manual/_data/upstream_labels.json (needs UPSTREAM).
 - titles            normalise RST title adornment widths for Khmer.
+- anchors           repair #fragments of links into the English manual.
+- preview           build one self-contained offline HTML preview.
 
 The maintenance targets need a checkout of the upstream manual; point UPSTREAM
 at its `manual/` directory, e.g.
@@ -117,6 +119,19 @@ labels:
 .PHONY: titles
 titles:
 	@python3 tools/normalize_titles.py --write
+
+.PHONY: anchors
+anchors:
+	@python3 tools/fix_external_anchors.py --write
+
+.PHONY: preview
+preview: html
+	@python3 tools/make_offline_preview.py \
+		--page interface/operators \
+		--extra-article getting_started/installing/linux_windowing_environment \
+		--extra-article interface/window_system/tabs_panels \
+		--extra-article getting_started/configuration/hardware \
+		--out ../preview/blender-manual-km-preview.html
 
 # Catch-all: route anything else to sphinx-build (e.g. `make epub`).
 %: Makefile

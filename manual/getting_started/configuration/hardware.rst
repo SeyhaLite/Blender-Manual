@@ -159,9 +159,9 @@ NDOF (កណ្ដុរ 3D)
 ដែលអ្នកអាចប្រើដើម្បីរុករកឆាកក្នុង Blender។ បច្ចុប្បន្នមានតែឧបករណ៍
 ដែលផលិតដោយ 3Dconnexion ប៉ុណ្ណោះដែលត្រូវបានគាំទ្រ ដូចជា SpaceMouse™។
 ឧបករណ៍ទាំងនេះអនុញ្ញាតឱ្យអ្នកស្វែងយល់ឆាក និងធ្វើឱ្យ
-`ការរុករក Fly/Walk <https://docs.blender.org/manual/en/5.2/editors/3dview/navigate/walk_fly.html#3dview-fly-walk>`__
+`ការរុករក Fly/Walk <https://docs.blender.org/manual/en/5.2/editors/3dview/navigate/walk_fly.html#dview-fly-walk>`__
 ងាយស្រួលគ្រប់គ្រង។ ឧបករណ៍ NDOF អាចត្រូវបានកំណត់ក្នុង
-`Preferences <https://docs.blender.org/manual/en/5.2/editors/preferences/input.html#editors_preferences_input_ndof>`__។
+`Preferences <https://docs.blender.org/manual/en/5.2/editors/preferences/input.html#editors-preferences-input-ndof>`__។
 ការកំណត់ទាំងនេះក៏អាចចូលដំណើរការបានដោយផ្ទាល់ពី viewport
 ដោយប្រើប៊ូតុង :kbd:`NDOFMenu` នៅលើឧបករណ៍ NDOF។
 

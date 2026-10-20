@@ -53,7 +53,7 @@ Report Message
 ផ្នែកខាងស្ដាំនៃរបារស្ថានភាព បង្ហាញព័ត៌មានអំពី Blender instance។
 ថាតើព័ត៌មានអ្វីខ្លះត្រូវបង្ហាញ អាចជ្រើសរើសបានដោយចុច :kbd:`RMB` លើរបារស្ថានភាព
 ឬក្នុង `Preferences
-<https://docs.blender.org/manual/en/5.2/editors/preferences/interface.html#prefs-interface-status_bar>`__។
+<https://docs.blender.org/manual/en/5.2/editors/preferences/interface.html#prefs-interface-status-bar>`__។
 
 .. figure:: /images/interface_window-system_status-bar_ui-right.png
    :align: center

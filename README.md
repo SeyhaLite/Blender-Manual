@@ -154,6 +154,8 @@ tools/                  # quality + maintenance scripts
 | `make livehtml` | Auto-rebuild នៅ `http://127.0.0.1:8000` |
 | `make linkcheck` | ពិនិត្យតំណខាងក្រៅ |
 | `make check` | ដំណើរការ `tools/check_translation.py` |
+| `make anchors` | កែ `#fragment` នៃតំណទៅសៀវភៅណែនាំអង់គ្លេស |
+| `make preview` | បង្កើតឯកសារ HTML offline តែមួយ (inline CSS/font/JS ទាំងអស់) |
 | `make gettext` / `make update_po` | លំហូរការងារ gettext/`.po` សម្រាប់អនាគត |
 | `make clean` | លុប `build/` |
 
@@ -169,6 +171,10 @@ python3 tools/check_translation.py --report --upstream ../upstream/manual
 # កែប្រវែងចំណងជើង RST (អក្សរខ្មែរវែងជាងអង់គ្លេស)
 python3 tools/normalize_titles.py --write
 ```
+
+`tools/fix_external_anchors.py` កែ `#fragment` នៃតំណភាសាអង់គ្លេសដោយស្វ័យប្រវត្តិ
+ព្រោះ docutils បំលែង `_` → `-` ហើយដកលេខនៅដើម (ឧ. `app_templates` → `#app-templates`,
+`3dview-fly-walk` → `#dview-fly-walk`)។
 
 `tools/check_translation.py` ពិនិត្យ៖ គ្របដណ្ដប់អក្សរខ្មែរ, ឯកសារ changelog ដែលត្រូវបានដកចេញ,
 ភាពត្រឹមត្រូវនៃ toctree, រចនាសម្ព័ន្ធ (`:kbd:`, `:menuselection:`, code block, figure, admonition,

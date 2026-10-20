@@ -68,7 +68,7 @@ Toolbar លោត (Pop-Up Toolbar)
 ឧទាហរណ៍ អ្នកអាចចុច :kbd:`Spacebar T` សម្រាប់ Transform,
 :kbd:`Spacebar D` សម្រាប់ Annotate, :kbd:`Spacebar M` សម្រាប់ Measure ជាដើម។
 សូមមើល `Spacebar Action
-<https://docs.blender.org/manual/en/5.2/editors/preferences/keymap.html#keymap-blender_default-spacebar_action>`__។
+<https://docs.blender.org/manual/en/5.2/editors/preferences/keymap.html#keymap-blender-default-spacebar-action>`__។
 
 
 ជំនួយចិត្តរហ័ស (Quick Favorites)

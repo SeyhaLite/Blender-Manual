@@ -147,6 +147,8 @@
 
 .. upstream-commit: 4a3be8f9ed3b
 
+.. upstream-commit: 4a3be8f9ed3b
+
 ដើម្បីធ្វើឱ្យតារាងនេះទាន់សម័យ សូមដំណើរការ (ត្រូវការ checkout នៃ upstream)៖
 
 .. code-block:: sh

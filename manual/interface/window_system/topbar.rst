@@ -38,7 +38,7 @@ About Blender
 
 Install Application Template
    ដំឡើង `application template
-   <https://docs.blender.org/manual/en/5.2/advanced/app_templates.html#app_templates>`__ ថ្មី។
+   <https://docs.blender.org/manual/en/5.2/advanced/app_templates.html#app-templates>`__ ថ្មី។
 
 
 ម៉ឺនុយ File
@@ -142,7 +142,7 @@ External Data
       ឯកសារ ``.blend`` ដែលមានស្រាប់នឹងត្រូវសរសេរជាន់លើ។
    Make Paths Relative
       ធ្វើឱ្យផ្លូវទាំងអស់ទៅឯកសារខាងក្រៅ
-      `សមេក (relative) <https://docs.blender.org/manual/en/5.2/files/blend/open_save.html#files-blend-relative_paths>`__
+      `សមេក (relative) <https://docs.blender.org/manual/en/5.2/files/blend/open_save.html#files-blend-relative-paths>`__
       ធៀបនឹងឯកសារ ``.blend`` បច្ចុប្បន្ន។
    Make Paths Absolute
       ធ្វើឱ្យផ្លូវទាំងអស់ទៅឯកសារខាងក្រៅជាផ្លូវពេញ (absolute = ផ្លូវពេញពី root របស់ប្រព័ន្ធ)។
@@ -241,7 +241,7 @@ Operator Search
 Rename Active Item
    ប្ដូរឈ្មោះវត្ថុសកម្ម ឬ node;
    សូមមើល `ឧបករណ៍ Rename
-   <https://docs.blender.org/manual/en/5.2/files/blend/rename.html#tools_rename-active>`__
+   <https://docs.blender.org/manual/en/5.2/files/blend/rename.html#tools-rename-active>`__
    សម្រាប់ព័ត៌មានបន្ថែម។
 Batch Rename
    ប្ដូរឈ្មោះប្រភេទទិន្នន័យច្រើនក្នុងពេលតែមួយ;

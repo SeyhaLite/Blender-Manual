@@ -82,6 +82,32 @@ git read-tree -mu HEAD          # ~17 MB, .rst only, no images
 grep -rn '^\s*\.\. _my-label:' manual/
 ```
 
+#### Anchor fragments — do not hand-write them
+
+The `#fragment` of a link into the English manual is **not** the upstream label.
+docutils derives the HTML `id` with `docutils.nodes.make_id`, which lower-cases,
+collapses *every* run of non-alphanumeric characters (including `_`) into one
+`-`, and strips leading digits:
+
+| upstream label | hand-written (dead) | `make_id` (correct) |
+|---|---|---|
+| `files-blend-relative_paths` | `#files-blend-relative_paths` | `#files-blend-relative-paths` |
+| `app_templates` | `#app_templates` | `#app-templates` |
+| `3dview-fly-walk` | `#3dview-fly-walk` | `#dview-fly-walk` |
+| `bpy.ops.wm.save_mainfile` | `#bpy.ops.wm.save_mainfile` | `#bpy-ops-wm-save-mainfile` |
+
+Always run the checker before committing; it rewrites them from the label map:
+
+```sh
+python3 tools/fix_external_anchors.py --check   # report
+python3 tools/fix_external_anchors.py --write   # repair
+make linkcheck                                   # must exit 0
+```
+
+`tools/make_offline_preview.py` and `tools/fix_external_anchors.py` both read the
+same map, and `km_xref_fallback` computes fragments with `make_id`, so the
+automatic links were always correct — only hand-written ones need this.
+
 `manual/_data/upstream_labels.json` already contains the full
 label → document map (5486 labels over 1565 documents) if you prefer to look it
 up offline:
@@ -98,11 +124,18 @@ v=d['labels']['bpy.ops.wm.save_mainfile'];print(d['docs'][v[0]]+'#'+v[1])"
 ```sh
 make setup
 # ...edit...
-make html                                    # must exit 0, zero warnings
-python3 tools/normalize_titles.py --write     # fix RST title adornment widths
+python3 tools/normalize_titles.py --write      # fix RST title adornment widths
+python3 tools/fix_external_anchors.py --write  # repair English-manual #anchors
+make html                                      # must exit 0, zero warnings
 python3 tools/check_translation.py --report --upstream ../upstream/manual
-make linkcheck                                # needs network
+make linkcheck                                 # needs network; must exit 0
 ```
+
+`make linkcheck` exits 0 today: **159 working, 0 broken**. The `linkcheck_ignore`
+list in `manual/conf.py` holds only URLs copied verbatim from upstream whose
+sites answer a non-browser client with 400/403/429 (Reddit, Stack Exchange,
+forum.htc.com, packages.debian.org, matrix.to SPA routes, …). Each is commented
+with the reason. Do not add anything else to that list.
 
 Then open a pull request.
 

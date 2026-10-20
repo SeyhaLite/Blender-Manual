@@ -79,7 +79,7 @@ Menu Search
 .. seealso::
 
    ជម្រើស `Spacebar Action
-   <https://docs.blender.org/manual/en/5.2/editors/preferences/keymap.html#keymap-blender_default-spacebar_action>`__
+   <https://docs.blender.org/manual/en/5.2/editors/preferences/keymap.html#keymap-blender-default-spacebar-action>`__
    ក្នុង Preferences។
 
 
