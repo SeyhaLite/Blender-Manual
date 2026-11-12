@@ -10,14 +10,14 @@ This repository contains a **partial Khmer translation** of the official Blender
 
 - [ស្ថានភាពការបកប្រែ](#ស្ថានភាពការបកប្រែ)
 - [មុខងារសំខាន់ៗ](#មុខងារសំខាន់ៗ)
-- [ប្រភព និងអាជ្ញាបណ្ណ](#ប្រភព-និងអាជ្ញាបណ្ណ--provenance--license)
-- [ដំឡើង និង Build](#ដំឡើង-និង-build--quick-start)
-- [ពាក្យបញ្ជា](#ពាក្យបញ្ជា--commands)
+- [ប្រភព និងអាជ្ញាបណ្ណ](#ប្រភព-និងអាជ្ញាបណ្ណ)
+- [ដំឡើង និង Build](#ដំឡើង-និង-build)
+- [ពាក្យបញ្ជា](#ពាក្យបញ្ជា)
 - [រចនាសម្ព័ន្ធ Repository](#រចនាសម្ព័ន្ធ-repository)
-- [ការដោះស្រាយតំណយោង](#ការដោះស្រាយតំណយោង--cross-references)
-- [ការថែទាំ](#ការថែទាំ--maintenance)
-- [ការចូលរួមចំណែក](#ការចូលរួមចំណែក--contributing)
-- [ការដាក់ពង្រាយ](#ការដាក់ពង្រាយ--deployment)
+- [ការដោះស្រាយតំណយោង](#ការដោះស្រាយតំណយោង)
+- [ការថែទាំ](#ការថែទាំ)
+- [ការចូលរួមចំណែក](#ការចូលរួមចំណែក)
+- [ការដាក់ពង្រាយ](#ការដាក់ពង្រាយ)
 - [គោលការណ៍គម្រោង](#គោលការណ៍គម្រោង)
 
 ---
@@ -57,7 +57,7 @@ Sphinx មិនមានប្រព័ន្ធបំបែកពាក្យ�
 
 ពាក្យខ្មែរត្រូវបាន Index ជា token តាមដកឃ្លា។ ការស្វែងរកឃ្លាដែលបំបែកដោយដកឃ្លាអាចដំណើរការ ប៉ុន្តែការស្វែងរកតែផ្នែកខាងក្នុងនៃពាក្យ ឬឃ្លាខ្មែរដែលគ្មានដកឃ្លា មិនត្រូវបានគាំទ្រល្អទេ។
 
-## ប្រភព និងអាជ្ញាបណ្ណ / Provenance & License
+## ប្រភព និងអាជ្ញាបណ្ណ
 
 | ព័ត៌មាន | តម្លៃ |
 |---|---|
@@ -72,7 +72,7 @@ Sphinx មិនមានប្រព័ន្ធបំបែកពាក្យ�
 
 ឯកសារ <code>getting_started/about/history.rst</code> (ប្រវត្តិកំណែ) មិនត្រូវបានបកប្រែ និងមិនត្រូវបានរួមបញ្ចូលទេ ព្រោះវាជា Changelog មិនមែនជាខ្លឹមសារបង្រៀន។
 
-## ដំឡើង និង Build / Quick Start
+## ដំឡើង និង Build
 
 ត្រូវការ **Python 3.11 ឬខ្ពស់ជាងនេះ**។
 
@@ -100,7 +100,7 @@ make.bat html
 
 **ចំណាំ៖** <code>make html</code> និង <code>make.bat html</code> ប្រើ <code>-W --keep-going</code>។ មានន័យថា Sphinx Warning ណាមួយនឹងធ្វើឱ្យ Build បរាជ័យ។ សម្រាប់ការសាកល្បងពេលកំពុងសរសេរ អាចប្រើ <code>make html-quick</code> ឬ <code>make.bat html-quick</code> ប៉ុន្តែមុនពេលបញ្ជូនការកែប្រែ ត្រូវដោះស្រាយ Warning ទាំងអស់។
 
-## ពាក្យបញ្ជា / Commands
+## ពាក្យបញ្ជា
 
 | ពាក្យបញ្ជា | មុខងារ |
 |---|---|
@@ -143,7 +143,7 @@ manual/
 tools/                  # ស្គ្រីបពិនិត្យគុណភាព និងថែទាំ
 ~~~
 
-## ការដោះស្រាយតំណយោង / Cross-References
+## ការដោះស្រាយតំណយោង
 
 ដោយសារការបកប្រែមិនទាន់ពេញលេញ តំណ <code>:doc:</code> និង <code>:ref:</code> មួយចំនួននៅក្នុង Upstream ចង្អុលទៅទំព័រដែលមិនទាន់មានជាភាសាខ្មែរ។ គម្រោងប្រើ Extension <code>km_xref_fallback</code> ដើម្បីដោះស្រាយ៖
 
@@ -153,7 +153,7 @@ tools/                  # ស្គ្រីបពិនិត្យគុណភ
 
 តំណ Fallback ត្រូវបានកំណត់ CSS class <code>km-fallback-en</code> និងបង្ហាញស្លាក <code>EN</code> ដើម្បីឱ្យអ្នកអានដឹងថាកំពុងបើកទំព័រភាសាអង់គ្លេស។
 
-## ការថែទាំ / Maintenance
+## ការថែទាំ
 
 ស្គ្រីបខាងក្រោមត្រូវការថត Upstream checkout នៅ <code>../upstream/manual</code> លើកលែងតែបានបញ្ជាក់ផ្លូវផ្សេង៖
 
@@ -181,7 +181,7 @@ python3 tools/fix_external_anchors.py --write
 
 <code>tools/check_translation.py</code> ពិនិត្យការគ្របដណ្ដប់អក្សរខ្មែរ ឯកសារ Changelog ដែលត្រូវដកចេញ ភាពត្រឹមត្រូវនៃ Toctree រចនាសម្ព័ន្ធសំខាន់ៗធៀបនឹង Upstream អក្សរមកពីប្រព័ន្ធអក្សរដែលមិនត្រូវការ UTF-8 និងការលេចធ្លាយ Credential។
 
-## ការចូលរួមចំណែក / Contributing
+## ការចូលរួមចំណែក
 
 សូមអាន [<code>CONTRIBUTING.md</code>](CONTRIBUTING.md) និង [ការណែនាំសម្រាប់អ្នកចូលរួមជាភាសាខ្មែរ](manual/appendix/contributing.rst) មុនពេលកែប្រែ ឬបកប្រែឯកសារ។
 
@@ -193,7 +193,7 @@ python3 tools/fix_external_anchors.py --write
 - ប្រើពាក្យបច្ចេកទេសខ្មែរឱ្យស៊ីសង្វាក់គ្នាតាម [វចនានុក្រម](manual/glossary/index.rst)។
 - ដំណើរការ <code>make html</code> និង <code>make check</code> មុនពេលបញ្ជូន Pull Request។
 
-## ការដាក់ពង្រាយ / Deployment
+## ការដាក់ពង្រាយ
 
 គម្រោងមានឯកសារកំណត់រចនាសម្ព័ន្ធសម្រាប់ [Read the Docs](https://app.readthedocs.org/) នៅ [<code>.readthedocs.yaml</code>](.readthedocs.yaml)៖
 
