@@ -38,7 +38,8 @@ Popup Menu បង្ហាញបញ្ជី Operator ដែលអ្នកអ�
 
 អ្នកក៏អាចប្រើមុខងារ Menu Search ដើម្បីស្វែងរក Popup Menu ទាំងអស់របស់ Editor មួយបានដែរ។
 
-### Collapsing Menus
+Collapsing Menus
+----------------
 
 ពេលខ្លះ ការបង្រួមម៉ឺនុយអាចជួយបន្ថែមទំហំទំនេរផ្ដេកនៅក្នុង Header។ អ្នកអាចធ្វើដូចនេះតាម Context Menu របស់ Header៖ ចុច :kbd:`RMB` លើ Header រួចដកសញ្ញាធីកចេញពីជម្រើស *Show Menus*។
 
@@ -72,7 +73,8 @@ Select Menu (ឬហៅថា Selector) អនុញ្ញាតឱ្យអ្�
 
 ចុច :kbd:`LMB` ដើម្បីបើកម៉ឺនុយ រួចជ្រើសរើសជម្រើសដែលអ្នកត្រូវការ។ ជម្រើសដែលបានជ្រើសរើសនឹងបង្ហាញនៅក្នុងប៊ូតុង។ អ្នកក៏អាចប្ដូររវាងជម្រើសដោយមិនចាំបាច់បើកម៉ឺនុយបានដែរ ដោយរមូរកង់កណ្ដុរ :kbd:`Ctrl-Wheel` នៅលើប៊ូតុង។
 
-### Expanded View
+Expanded View
+-------------
 
 .. /images/interface_controls_buttons_buttons_radio.png
 .. figure:: https://docs.blender.org/manual/en/5.2/_images/interface_controls_buttons_buttons_radio.png
