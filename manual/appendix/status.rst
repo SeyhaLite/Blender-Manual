@@ -99,9 +99,9 @@
      - 118
      - [..................] 0.0%
    * - ``interface``
-     - 17
+     - 20
      - 58
-     - [#####.............] 29.3%
+     - [######............] 34.5%
    * - ``modeling``
      - 0
      - 774
@@ -135,9 +135,9 @@
      - 62
      - [..................] 0.0%
    * - **សរុប**
-     - **35**
+     - **38**
      - **2358**
-     - **1.5%**
+     - **1.6%**
 
 .. END GENERATED COVERAGE
 
@@ -181,10 +181,10 @@
        ប្រព័ន្ធបង្អួច តំបន់ និងតំបន់រង ការជ្រើសរើស Undo/Redo
        ប្រព័ន្ធឧបករណ៍ និង Operator
    * - Pass 2
-     - ``interface/controls/**``, ``interface/keymap/{blender_default,industry_compatible}``,
-       ``glossary/**``
-     - ធាតុគ្រប់គ្រង (ប៊ូតុង ម៉ឺនុយ ផ្ទាំង តារាង) ប្រព័ន្ធ node
-       តារាងផ្លូវកាត់គ្រាប់ចុចពេញលេញ និងវចនានុក្រមពេញលេញ
+     - ``interface/controls/{index,buttons/buttons,buttons/menus}``,
+       ``interface/keymap/{blender_default,industry_compatible}``, ``glossary/**``
+     - បានបកប្រែដំបូងនូវ Buttons និង Menus។ ផ្នែក Input Fields, templates និង Nodes,
+       តារាងផ្លូវកាត់គ្រាប់ចុចពេញលេញ និងវចនានុក្រម នៅតែត្រូវបន្ត
    * - Pass 3
      - ``editors/**``
      - 3D Viewport ការរុករក Outliner Properties Timeline UV/Image Editor
