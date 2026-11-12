@@ -29,10 +29,10 @@ This repository contains a **partial Khmer translation** of the official Blender
 | ផ្នែក | ឯកសារមាន / សរុប | វឌ្ឍនភាព |
 |---|---:|---:|
 | <code>getting_started/</code> | 15 / 16 | 93.8% |
-| <code>interface/</code> (រួមទាំង <code>window_system/</code>) | 17 / 58 | 29.3% |
+| <code>interface/</code> (រួមទាំង <code>window_system/</code>) | 20 / 58 | 34.5% |
 | <code>glossary/</code> | 1 / 1 | មានឯកសារ ប៉ុន្តែមានតែពាក្យស្នូលប៉ុណ្ណោះ |
 | ឯកសារកម្រិតដើម (<code>root</code>) | 2 / 3 | 66.7% |
-| **សរុប** | **35 / 2,358** | **1.48%** |
+| **សរុប** | **38 / 2,358** | **1.61%** |
 
 **ចំណាំអំពីចំនួន៖** វាស់ចំនួនឯកសារ <code>.rst</code> ដែលមានក្នុង Repository ប៉ុណ្ណោះ។ វាមិនមែនជាការវាយតម្លៃថាអត្ថបទក្នុងឯកសារនីមួយៗបានបកប្រែពេញលេញ ឬមានគុណភាពល្អឥតខ្ចោះទេ។ សម្រាប់វឌ្ឍនភាពលម្អិតតាមផ្នែក សូមមើល [<code>manual/appendix/status.rst</code>](manual/appendix/status.rst)។ លេខទាំងនេះត្រូវបានបង្កើតដោយស្គ្រីប៖
 
@@ -139,6 +139,7 @@ manual/
 ├── getting_started/    # ផ្នែកចាប់ផ្ដើមប្រើប្រាស់
 ├── glossary/           # វចនានុក្រមពាក្យបច្ចេកទេស
 ├── interface/          # ផ្នែកចំណុចប្រទាក់អ្នកប្រើ
+│   └── controls/       # Buttons និង Menus (Pass 2 មួយផ្នែក)
 └── images/             # រូបភាពសៀវភៅណែនាំ
 tools/                  # ស្គ្រីបពិនិត្យគុណភាព និងថែទាំ
 ~~~
